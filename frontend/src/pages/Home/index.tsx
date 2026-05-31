@@ -28,7 +28,7 @@ const Home: React.FC = () => {
           animate={{ opacity: 0.75, scale: 1 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
           className="banner-bg"
-          style={{ backgroundImage: `url('/uploads/微信图片_20251127025139_150_2.jpg')` }}
+          style={{ backgroundImage: `url('/uploads/img1.jpg')` }}
         />
         <div className="banner-content">
           <motion.h2 
