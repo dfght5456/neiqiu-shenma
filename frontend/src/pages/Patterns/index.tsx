@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Image } from 'antd-mobile';
 import Footer from '../../components/Footer';
 import { useContent } from '../../context/ContentContext';
 import './index.css';
@@ -39,7 +38,7 @@ const Patterns: React.FC = () => {
             transition={{ delay: index * 0.1, duration: 0.5 }}
           >
             <div className="pattern-image-wrapper">
-              <Image src={item.image} fit="cover" className="pattern-img" />
+              <img src={item.image} alt={item.name} className="pattern-img" loading="lazy" />
             </div>
             <div className="pattern-info">
               <h3>{item.name}</h3>
