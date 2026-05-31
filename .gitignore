@@ -11,3 +11,13 @@ Thumbs.db
 *.swo
 .wrangler
 .wrangler/state
+release/
+*.mp4
+frontend/dist/
+frontend/node_modules/
+frontend/.wrangler/
+frontend/public/uploads/*.mp4
+package-lock.json
+frontend/package-lock.json
+视觉优化需求文档.md
+docs/
