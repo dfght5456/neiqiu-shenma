@@ -4,3 +4,4 @@ compatibility_flags = ["nodejs_compat"]
 
 [assets]
 directory = "frontend/dist"
+serve_directly = true
