@@ -29,22 +29,28 @@ const Patterns: React.FC = () => {
 
       <div className="patterns-grid">
         {patterns.items.map((item, index) => (
-          <motion.div 
+          <div 
             key={item.id}
             className="pattern-card"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+            style={{
+              animationDelay: `${index * 100}ms`,
+              animationFillMode: 'both'
+            }}
           >
             <div className="pattern-image-wrapper">
-              <img src={item.image} alt={item.name} className="pattern-img" loading="lazy" />
+              <img 
+                src={item.image} 
+                alt={item.name} 
+                className="pattern-img" 
+                loading="lazy"
+                style={{ opacity: 1 }}
+              />
             </div>
             <div className="pattern-info">
               <h3>{item.name}</h3>
               <p>{item.desc}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
       <Footer />
