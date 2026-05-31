@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './index.css';
 
-import img150 from '../../assets/微信图片_20251127025139_150_2.jpg';
-
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
@@ -30,7 +28,7 @@ const Home: React.FC = () => {
           animate={{ opacity: 0.75, scale: 1 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
           className="banner-bg"
-          style={{ backgroundImage: `url(${img150})` }}
+          style={{ backgroundImage: `url('/uploads/微信图片_20251127025139_150_2.jpg')` }}
         />
         <div className="banner-content">
           <motion.h2 
