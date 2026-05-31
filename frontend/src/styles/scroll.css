@@ -1,0 +1,208 @@
+@import './variables.css';
+
+.scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.scroll-container-passive {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  z-index: var(--z-index-nav);
+  transition: width 0.1s ease-out;
+}
+
+.scroll-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-neutral-card);
+}
+
+.scroll-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--scroll-progress, 0%);
+  background: var(--gradient-primary);
+  transition: width 0.05s linear;
+}
+
+.virtual-scroll-container {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  will-change: transform;
+}
+
+.virtual-scroll-item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+.lazy-load-trigger {
+  position: relative;
+}
+
+.lazy-load-trigger::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  visibility: hidden;
+}
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform;
+}
+
+.parallax-bg {
+  transform: translateY(calc(var(--parallax-offset, 0) * 0.5));
+}
+
+.parallax-mid {
+  transform: translateY(calc(var(--parallax-offset, 0) * 0.3));
+}
+
+.parallax-fore {
+  transform: translateY(calc(var(--parallax-offset, 0) * 0.1));
+}
+
+.infinite-scroll-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  color: var(--color-neutral-light);
+}
+
+.infinite-scroll-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-neutral-card);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: var(--color-neutral-white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-button);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--transition-normal);
+  z-index: var(--z-index-nav);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--color-primary-light);
+  box-shadow: var(--shadow-button-hover);
+}
+
+.scroll-to-top:active {
+  transform: scale(0.9);
+}
+
+.scroll-fade-top {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 100%);
+}
+
+.scroll-fade-bottom {
+  mask-image: linear-gradient(to top, transparent 0%, black 5%, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 5%, black 100%);
+}
+
+.scroll-fade-both {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 70px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .scroll-indicator {
+    height: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-container {
+    scroll-behavior: auto;
+  }
+  
+  .parallax-layer {
+    transform: none;
+  }
+  
+  .infinite-scroll-spinner {
+    animation: none;
+  }
+}

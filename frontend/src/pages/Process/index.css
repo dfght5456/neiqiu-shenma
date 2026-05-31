@@ -1,0 +1,288 @@
+.process-container {
+  min-height: 100%;
+  background-color: var(--color-neutral-bg);
+  padding-bottom: var(--spacing-3xl);
+  position: relative;
+}
+
+.process-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(232, 228, 220, 0.6) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.process-header {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.process-header h1 {
+  font-size: var(--font-size-title-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-serif);
+  letter-spacing: 2px;
+}
+
+.process-header p {
+  color: var(--color-secondary-yellow);
+  font-size: var(--font-size-body);
+  letter-spacing: 2px;
+}
+
+.process-video-section {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-2xl);
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.video-title {
+  font-size: var(--font-size-title-md);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+.process-video-box {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-neutral-black);
+  position: relative;
+  border: 2px solid rgba(198, 40, 40, 0.1);
+}
+
+.process-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.process-video-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.process-video-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.process-video-cover.blurred {
+  filter: blur(2px);
+  transform: scale(1.05);
+}
+
+.process-video-placeholder:hover .process-video-cover {
+  transform: scale(1.1);
+}
+
+.process-video-placeholder .play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: rgba(198, 40, 40, 0.6);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-normal);
+  z-index: 2;
+}
+
+.process-video-placeholder:hover .play-button-overlay {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--color-primary);
+  border-color: var(--color-neutral-white);
+  box-shadow: var(--shadow-button-hover);
+}
+
+.steps-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.adm-steps-step-icon-dot {
+  background-color: var(--color-primary);
+}
+
+.custom-step-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--gradient-primary);
+  color: var(--color-neutral-white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-body);
+  box-shadow: var(--shadow-button);
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-family-serif);
+}
+
+.adm-steps-step-line {
+  background-color: var(--color-neutral-card);
+  width: 2px;
+  left: 17px !important;
+}
+
+.step-title-box {
+  font-size: var(--font-size-title-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-serif);
+  letter-spacing: 1px;
+}
+
+.step-content-box {
+  background: var(--color-neutral-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-card);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid rgba(198, 40, 40, 0.08);
+  transition: all var(--transition-normal);
+}
+
+.step-content-box:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.step-text {
+  font-size: var(--font-size-body);
+  color: var(--color-neutral-medium);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+
+.step-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.step-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.step-image img:hover {
+  transform: scale(1.05);
+}
+
+.adm-steps-vertical .adm-step .adm-step-content {
+  padding-left: var(--spacing-md) !important;
+  padding-bottom: var(--spacing-lg) !important;
+}
+
+.adm-steps-vertical .adm-step .adm-step-indicator {
+  margin-right: 0 !important;
+  width: 44px !important;
+}
+
+.adm-steps-vertical .adm-step .adm-step-indicator::after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.adm-steps-step-title {
+  margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .process-container {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .process-header {
+    padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
+  }
+
+  .process-header h1 {
+    font-size: var(--font-size-title-lg);
+  }
+
+  .process-video-section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .video-title {
+    font-size: var(--font-size-title-sm);
+  }
+
+  .custom-step-icon {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-body-sm);
+  }
+
+  .step-title-box {
+    font-size: var(--font-size-title-sm);
+  }
+
+  .step-content-box {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .step-text {
+    font-size: var(--font-size-body-sm);
+  }
+
+  .process-video-placeholder .play-button-overlay {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .process-header h1 {
+    font-size: var(--font-size-title-md);
+  }
+
+  .custom-step-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .step-title-box {
+    font-size: var(--font-size-body-lg);
+  }
+}

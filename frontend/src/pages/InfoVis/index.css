@@ -1,0 +1,122 @@
+.infovis-container {
+  min-height: 100%;
+  background-color: var(--color-neutral-bg);
+  padding-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.infovis-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(232, 228, 220, 0.5) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.infovis-header {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.infovis-header h1 {
+  font-size: var(--font-size-title-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-serif);
+  letter-spacing: 2px;
+}
+
+.infovis-header p {
+  color: var(--color-neutral-medium);
+  font-size: var(--font-size-body);
+  letter-spacing: 1px;
+}
+
+.infovis-loading {
+  position: absolute;
+  top: 40vh;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  color: var(--color-neutral-medium);
+  z-index: 1;
+}
+
+.infovis-loading .loading-text {
+  font-size: var(--font-size-body);
+  font-family: var(--font-family-serif);
+}
+
+.infovis-content {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.infovis-img-wrapper {
+  background: var(--color-neutral-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-md);
+  border: 1px solid rgba(198, 40, 40, 0.08);
+  overflow: hidden;
+}
+
+.infovis-img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-slow);
+}
+
+.infovis-img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .infovis-container {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .infovis-header {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .infovis-header h1 {
+    font-size: var(--font-size-title-lg);
+  }
+
+  .infovis-header p {
+    font-size: var(--font-size-body-sm);
+  }
+
+  .infovis-content {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .infovis-img-wrapper {
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 375px) {
+  .infovis-header h1 {
+    font-size: var(--font-size-title-md);
+  }
+}

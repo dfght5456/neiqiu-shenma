@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <pattern id="cloudPattern" x="0" y="0" width="60" height="30" patternUnits="userSpaceOnUse">
+      <path d="M5,25 Q15,10 30,20 T55,15" stroke="currentColor" stroke-width="1" fill="none"/>
+    </pattern>
+  </defs>
+  <rect width="120" height="120" fill="url(#cloudPattern)" opacity="0.3"/>
+</svg>
