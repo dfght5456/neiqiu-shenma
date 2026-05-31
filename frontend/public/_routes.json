@@ -1,9 +1,5 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": ["/assets/*", "/uploads/*", "/content.json", "/vite.svg"],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/*", "dest": "/index.html" }
-  ]
+  "exclude": ["/assets/*", "/uploads/*", "/*.js", "/*.css", "/*.json", "/*.svg", "/*.jpg", "/*.png", "/*.webp"]
 }
